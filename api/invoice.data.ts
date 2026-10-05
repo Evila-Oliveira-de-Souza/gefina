@@ -51,7 +51,6 @@ const invoices: Invoice[] = [
       name: 'Gráfica Aurora',
       email: 'contato@graficaaurora.com.br',
     },
-  },
-];
+  }];
 
 export default invoices;
