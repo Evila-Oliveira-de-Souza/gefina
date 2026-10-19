@@ -1,9 +1,9 @@
-import { Invoice } from "./invoiceType.ts"
+import { Invoice } from './invoiceType.ts'
 import { 
     situationLabel,
     formatCurrency,
     formatDate
-} from "./utils.ts";
+} from './utils.ts';
 
 interface InvoiceRowProps {
     invoice: Invoice;
