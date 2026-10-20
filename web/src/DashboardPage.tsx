@@ -18,6 +18,7 @@ export default function DashboardPage() {
 
                 if (!response.ok) {
                     setError('Não foi possível carregar o painel inicial.');
+                    setLoading(false);
                     return;
                 }
 

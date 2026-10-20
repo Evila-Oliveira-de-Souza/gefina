@@ -15,6 +15,7 @@ export default function InvoicePage() {
 
                 if (!response.ok) {
                     setError('Não foi possível carregar faturas.');
+                    setLoading(false);
                     return;
                 }
 
