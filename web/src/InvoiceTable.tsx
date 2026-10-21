@@ -10,13 +10,13 @@ export default function InvoiceTable(props: InvoiceTableProps) {
 
     return <table>
         <thead>
-           <tr>
-             <td>Cliente</td>
-            <td>Valor</td>
-            <td>Data de Emissão</td>
-            <td>Data de Vencimento</td>
-            <td>Situação</td>
-           </tr>
+            <tr>
+                <th>Cliente</th>
+                <th>Valor</th>
+                <th>Data de Emissão</th>
+                <th>Data de Vencimento</th>
+                <th>Situação</th>
+            </tr>
         </thead>
         <tbody>
             {invoices.map(invoice => (
