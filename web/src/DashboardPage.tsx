@@ -30,7 +30,7 @@ export default function DashboardPage() {
                 setError('Não foi possível carregar o painel inicial.');
 
             }
-            
+
             setLoading(false);
         }
 
@@ -39,29 +39,31 @@ export default function DashboardPage() {
 
     if (loading) return <p>Carregando painel inicial...</p>
 
-    if (error !==null || dashboard === null) return <p>{error}</p>
+    if (error !== null || dashboard === null) return <p>{error}</p>
 
     return <div>
         <h1>Painel Inicial</h1>
 
-        <div>
+        <div className='summary-cards'>
             <SummaryCard label='Total recebido: ' value={formatCurrency(dashboard.totals.paid)} />
             <SummaryCard label='Total pendente: ' value={formatCurrency(dashboard.totals.pending)} />
             <SummaryCard label='Faturas: ' value={String(dashboard.totals.invoiceCount)} />
             <SummaryCard label='Clientes: ' value={String(dashboard.totals.customerCount)} />
         </div>
 
-        <InvoiceSummaryTable 
-            title='Faturas Recentes'
-            dateLabel='Emissão'
-            invoices={dashboard.recentInvoices}
-            date={(invoice) => invoice.issueDate}
-        />
-        <InvoiceSummaryTable 
-            title='Faturas Atrasadas'
-            dateLabel='Vencimento'
-            invoices={dashboard.overdueInvoices}
-            date={(invoice) => invoice.dueDate}
-        />
+        <div className='summary-tables'>
+            <InvoiceSummaryTable
+                title='Faturas Recentes'
+                dateLabel='Emissão'
+                invoices={dashboard.recentInvoices}
+                date={(invoice) => invoice.issueDate}
+            />
+            <InvoiceSummaryTable
+                title='Faturas Atrasadas'
+                dateLabel='Vencimento'
+                invoices={dashboard.overdueInvoices}
+                date={(invoice) => invoice.dueDate}
+            />
+        </div>
     </div>;
 }
