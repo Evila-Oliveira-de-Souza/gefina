@@ -16,7 +16,6 @@ app.use((request, _response, next) => {
   console.log(`${request.method} ${request.url}`);
   next();
 });
-
 app.get('/api/health', async (_request, response) => {
   try {
     const connect = await pool.query('SELECT datname FROM pg_database WHERE oid = 5;');
@@ -38,9 +37,7 @@ app.get('/api/health', async (_request, response) => {
 app.use('/api/dashboard', dashboard);
 app.use('/api/invoices', invoices);
 
-app.use((request) => {
-  if (!request.url.startsWith('/api')) express.static(dist);
-});
+app.use(express.static (dist));
 
 app.use((request, response,next) => {
   if (request.url.startsWith('/api') || request.method !== 'GET') {
