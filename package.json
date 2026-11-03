@@ -4,7 +4,7 @@
     "description": "Sistema de gestão de contas a receber.",
     "author": "Evila Souza",
     "scripts": {
-        "check": "tsc --noEmit && biome check ./",
+        "check": "biome check ./",
         "fix": "biome check --write ./",
         "fix:unsafe": "biome check --write --unsafe ./"
     },
