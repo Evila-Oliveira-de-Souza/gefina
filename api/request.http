@@ -6,6 +6,9 @@ GET {{host}}/api/health
 ### Consultar métricas
 GET {{host}}/api/dashboard
 
+### Buscar opções de clientes
+GET {{host}}/api/customers/options
+
 ### Buscar faturas
 GET {{host}}/api/invoices
 
@@ -31,7 +34,7 @@ Content-Type: application/json
 }
 
 ### Atualizar fatura
-PUT {{host}}/api/invoices/182
+PUT {{host}}/api/invoices/180
 Content-Type: application/json
 
 {
@@ -43,4 +46,4 @@ Content-Type: application/json
 }
 
 ### Deletar fatura
-DELETE {{host}}/api/invoices/182
+DELETE {{host}}/api/invoices/180
