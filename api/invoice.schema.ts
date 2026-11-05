@@ -1,4 +1,5 @@
 import { z, type ZodError } from 'zod';
+import { id } from 'zod/locales';
 
 const invoiceStatusSchema = z.enum(
     [
@@ -8,13 +9,16 @@ const invoiceStatusSchema = z.enum(
     'A situação deve ser "Paga" ou "Pendente".'
 );
 
-export type InvoiceStatus = z.infer<typeof invoiceStatusSchema>
+export type InvoiceStatus = z.infer<typeof invoiceStatusSchema>;
 
 export const invoiceSchema = z
     .object(
         {
             customerId: z
                 .number('O cliente é obrigatório.')
+                .refine((id) => !Number.isNaN(id), {
+                    message: 'O cliente é obrigatório.'
+                })
                 .int('O identificador do cliente deve ser um número inteiro.')
                 .positive('O identificador do cliente deve ser maior que zero.'),
             amount: z
