@@ -98,7 +98,7 @@ export default function InvoiceForm(props: InvoiceFormProps) {
           </select>
         </div>
         <div className="field">
-          <label htmlFor="IssueDate">Emissão</label>
+          <label htmlFor="issueDate">Emissão</label>
           <input
             id="issueDate"
             type="date"
