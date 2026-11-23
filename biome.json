@@ -12,7 +12,7 @@
       "trailingCommas": "none"
     }
   },
-  "css":{
+  "css": {
     "parser": {
       "tailwindDirectives": true
     },
